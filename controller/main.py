@@ -25,7 +25,7 @@ class LightBoxccSaleDevportal(http.Controller):
                 "ssl_last_name": lastname,
                 "ssl_get_token": "Y",
                 "ssl_add_token": "Y",
-                "ssl_amount": 19.00,
+                "ssl_amount": amount,
 
         }
         session_token = requests.post(url, json=data)
