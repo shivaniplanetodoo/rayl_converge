@@ -17,15 +17,15 @@ class LightBoxccSaleDevportal(http.Controller):
         lastname = kw.get('ssl_last_name')
         amount = kw.get('ssl_amount')
         data = {
-                # "ssl_merchant_id": merchant_id,
-                # "ssl_user_id": merchant_user_id,
+                "ssl_merchant_id": merchant_id,
+                "ssl_user_id": merchant_user_id,
                 "ssl_pin": merchant_pin_code,
                 "ssl_transaction_type": "CCSALE",
                 # "ssl_first_name": firstname,
                 # "ssl_last_name": lastname,
                 # "ssl_get_token": "Y",
                 # "ssl_add_token": "Y",
-                "ssl_amount": amount,
+                "ssl_amount": 19.00,
 
         }
         session_token = requests.post(url, json=data)
