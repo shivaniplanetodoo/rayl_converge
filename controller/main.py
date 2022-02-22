@@ -47,6 +47,7 @@ class LightBoxccSaleDevportal(http.Controller):
         txn_id = kw.get('ssl_txn_id')
         cvv2cvc2 = kw.get('ssl_cvv2cvc2')
         avs_zip = kw.get('ssl_avs_zip')
+        avs_address = kw.get('ssl_avs_address')
         data = {
             "ssl_merchant_id": merchant_id,
             "ssl_user_id": merchant_user_id,
@@ -60,6 +61,7 @@ class LightBoxccSaleDevportal(http.Controller):
             "ssl_card_number":card_number,
             "ssl_exp_date":exp_date,
             "ssl_avs_zip":avs_zip,
+            "ssl_avs_address":avs_address,
             # "ssl_txn_id":txn_id,
             # "ssl_next_payment_date": "08/04/2022",
             # "ssl_billing_cycle": "MONTHLY",
