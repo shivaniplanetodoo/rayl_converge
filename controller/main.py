@@ -37,7 +37,7 @@ class LightBoxccSaleDevportal(http.Controller):
         merchant_id = '0024991'
         merchant_user_id = 'apiuser292930'
         merchant_pin_code = 'OQ5WCEK0I8AXPCUK7319UWC3R0FOWT1RIXPMJBDKN02WQMYBYZAR6HXGQLK88MR1'
-        url = 'https://api.demo.convergepay.com/hosted-payments/transaction_token'
+        url = 'https://api.demo.convergepay.com/VirtualMerchantDemo/processxml.do'
         _logger.info(kw)
         firstname = kw.get('ssl_first_name')
         lastname = kw.get('ssl_last_name')
@@ -45,25 +45,30 @@ class LightBoxccSaleDevportal(http.Controller):
         card_number = kw.get('ssl_card_number')
         exp_date = kw.get('ssl_exp_date')
         txn_id = kw.get('ssl_txn_id')
+        cvv2cvc2 = kw.get('ssl_cvv2cvc2')
+        avs_zip = kw.get('ssl_avs_zip')
         data = {
             "ssl_merchant_id": merchant_id,
             "ssl_user_id": merchant_user_id,
             "ssl_pin": merchant_pin_code,
-            "ssl_transaction_type": "ccaddrecurring",
-            "ssl_first_name": firstname,
-            "ssl_last_name": lastname,
-            "ssl_get_token": "Y",
-            "ssl_add_token": "Y",
+            "ssl_transaction_type": "ccsale",
+            # "ssl_first_name": firstname,
+            # "ssl_last_name": lastname,
+            # "ssl_get_token": "Y",
+            # "ssl_add_token": "Y",
             "ssl_amount": amount,
             "ssl_card_number":card_number,
             "ssl_exp_date":exp_date,
-            "ssl_txn_id":txn_id,
-            "ssl_next_payment_date": "08/04/2022",
-            "ssl_billing_cycle": "MONTHLY",
-            "ssl_end_of_month": "Y",
+            "ssl_avs_zip":avs_zip,
+            # "ssl_txn_id":txn_id,
+            # "ssl_next_payment_date": "08/04/2022",
+            # "ssl_billing_cycle": "MONTHLY",
+            # "ssl_end_of_month": "Y",
+            "ssl_cvv2cvc2": cvv2cvc2,
+
 
         }
         session_token = requests.post(url, json=data)
         _logger.info(session_token.text)
-        return session_token.text
+        return session_token
 
