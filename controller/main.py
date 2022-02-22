@@ -21,10 +21,10 @@ class LightBoxccSaleDevportal(http.Controller):
                 "ssl_user_id": merchant_user_id,
                 "ssl_pin": merchant_pin_code,
                 "ssl_transaction_type": "CCSALE",
-                # "ssl_first_name": firstname,
-                # "ssl_last_name": lastname,
-                # "ssl_get_token": "Y",
-                # "ssl_add_token": "Y",
+                "ssl_first_name": firstname,
+                "ssl_last_name": lastname,
+                "ssl_get_token": "Y",
+                "ssl_add_token": "Y",
                 "ssl_amount": 19.00,
 
         }
