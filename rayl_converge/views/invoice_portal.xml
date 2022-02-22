@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <!-- Adding Pay Now Button on my/invoices/ Page    -->
+    <template id="portal_invoice_page_inherit" inherit_id="account.portal_invoice_page">
+
+        <xpath expr="//div[hasclass('o_portal_invoice_sidebar')]//div[@class='small']" position="after">
+            <a class="btn btn-success" href="#" id="elavon_pay_now" title="Pay Now" onclick="checkPay()">Pay Now</a>
+            <input type="hidden" id="amount" name="invoice_amount" t-att-value="invoice.amount_total"/>
+            <input type="hidden" id="partner" name="partner_id" t-att-value="invoice.partner_id.name"/>
+        </xpath>
+
+    </template>
+
+</odoo>

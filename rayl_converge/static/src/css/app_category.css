@@ -1,0 +1,6 @@
+.o_search_panel{
+    display: none;
+}
+.o_mail_systray_item.show .o_mail_systray_dropdown {
+    left: -260px !important;
+}
